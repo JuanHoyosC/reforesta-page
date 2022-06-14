@@ -8,9 +8,12 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthCtx } from "../contexts";
 const SignInPage = () => {
+
+  const { t } = useTranslation();
   let location = useLocation();
   let navigate = useNavigate();
   let state = location.state as any | undefined;
@@ -62,7 +65,9 @@ const SignInPage = () => {
       }}
     >
       <FormControl variant="outlined" sx={{ width: "250px" }}>
-        <InputLabel htmlFor="outlined-adornment-email">Usuario</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-email">
+          { t('login.user') }
+        </InputLabel>
         <OutlinedInput
           id="outlined-adornment-email"
           type="text"
@@ -74,7 +79,7 @@ const SignInPage = () => {
       </FormControl>
       <FormControl variant="outlined" sx={{ width: "250px" }}>
         <InputLabel htmlFor="outlined-adornment-password">
-          Contraseña
+          { t('login.password') }
         </InputLabel>
         <OutlinedInput
           id="outlined-adornment-password"
@@ -100,7 +105,7 @@ const SignInPage = () => {
           variant="outlined"
           onClick={handleLogin}
         >
-          Ingresar
+          { t('login.login') }
         </Button>
       </FormControl>
     </div>

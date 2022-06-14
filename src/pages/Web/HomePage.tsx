@@ -9,8 +9,10 @@ import { useNavigate } from "react-router-dom";
 import CarouselPartners from "../../components/CarouselPartners";
 import SectionInformation from "../../components/SectionInformation";
 import useBlog from "../../hooks/useBlog";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const { blogPosts } = useBlog(3);
 
   let navigate = useNavigate();
@@ -20,16 +22,13 @@ const HomePage = () => {
       <Container>
         <div className="flex flex-col sm:flex-row p-5 z-10">
           <div className="basis-1/2 mt-20">
-            <p className="text-green-700">REFORESTA LORETO</p>
+            <p className="text-green-700">{ t('general.title') }</p>
             <h2 className="text-4xl mb-3">
-              INICIATIVAS PARA EL BENEFICIO SOCIAL
+              {t('home.socialBenefits')}
             </h2>
             <hr className="border-b-4 border-green-500 w-1/6 mb-3" />
             <p className="text-justify">
-              Fomento de iniciativas orientadas a crear o mejorar capacidades de
-              producción de bienes o servicios bajo condiciones competitivas,
-              rentables, sostenibles y sin efectos ambientales negativos
-              significativos.
+              {t('home.socialBenefitsDescription')}
             </p>
             <button
               className="bg-green-500  px-10 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white rounded-full mt-5 drop-shadow-2xl hover:bg-green-700 hover:-translate-y-1 transition duration-300 ease-in-out"
@@ -37,7 +36,7 @@ const HomePage = () => {
                 navigate("/acerca-de-nosotros");
               }}
             >
-              Leer mas
+              {t('home.readMore')}
             </button>
           </div>
           <div className="basis-1/2 p-8">
@@ -58,7 +57,7 @@ const HomePage = () => {
           <div className="absolute z-10 w-full h-auto">
             <div className="flex justify-center item-center z-10 mt-20">
               <p className="text-4xl text-white text-center">
-                Nuestros aliados en este procesos
+                { t('home.ourAllies') }
               </p>
             </div>
           </div>
@@ -69,8 +68,8 @@ const HomePage = () => {
       </div>
       <div className="flex justify-center item-center">
         <div className="text-center align-center">
-          <p className="text-green-700">Proyectos</p>
-          <h2 className="text-4xl mb-3">Ultimos proyectos</h2>
+          <p className="text-green-700">{ t('home.projects') }</p>
+          <h2 className="text-4xl mb-3">{ t('home.lastProjects') }</h2>
           <hr className=" align-center border-b-4 border-green-500 mb-3 mx-86 w-6/6" />
         </div>
       </div>

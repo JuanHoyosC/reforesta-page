@@ -13,7 +13,9 @@ import SideBar from "../components/SideBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AuthCtx } from "../contexts";
+import { useTranslation } from "react-i18next";
 const SecurePage = ({ children }: { children: JSX.Element }) => {
+  const { t } = useTranslation();
   const [showSideBar, setShowSideBar] = useState<boolean>(true);
   let navigate = useNavigate();
   const { user, logout,  authorized } = useContext(AuthCtx);
@@ -39,14 +41,14 @@ const SecurePage = ({ children }: { children: JSX.Element }) => {
                   <MenuIcon onClick={() => setShowSideBar(true)} />
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  Reforesta Loreto
+                  { t('general.title') }
                 </Typography>
                 <Button color="inherit" onClick={
                   ()=>{
                     logout();
                     navigate("/login", { replace: true });
                   }}>
-                  Logout
+                  { t('general.logout') }
                 </Button>
               </Toolbar>
             </AppBar>

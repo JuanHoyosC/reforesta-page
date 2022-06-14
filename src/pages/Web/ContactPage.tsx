@@ -9,8 +9,11 @@ import useMap from "../../hooks/useMap";
 import { succesAlert } from "../../utils/alerts";
 import { useState } from "react";
 import { sendEmail } from "../../services/email.services";
+import { useTranslation } from "react-i18next";
 
 const ContactPage = () => {
+
+  const { t } = useTranslation();
   const { donationContent } = useDonation();
   const { contacts } = useContact();
   const { map } = useMap();
@@ -42,7 +45,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <TopBanner image={TempImage} title="Contacto" id="top" />
+      <TopBanner image={TempImage} title={ t('contact.title') } id="top" />
       <Container>
         <div className="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
           <div
@@ -70,7 +73,7 @@ const ContactPage = () => {
               <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
                 <div className="text-center mb-10">
                   <p className="text-white text-xl">
-                    Puedes hablar con nosotros
+                    { t('contact.talkWithUs') }
                   </p>
                 </div>
                 <div>
@@ -78,7 +81,7 @@ const ContactPage = () => {
                     <div className="flex -mx-3">
                       <div className="w-full px-3 mb-5">
                         <label className="text-xs font-semibold px-1 text-white text-xl">
-                          Nombre
+                          { t('contact.name') }
                         </label>
                         <div className="flex">
                           <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
@@ -89,7 +92,7 @@ const ContactPage = () => {
                             name="nombre"
                             type="text"
                             className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-lime-900"
-                            placeholder="Ingrese su nombre"
+                            placeholder={ t('contact.namePlaceholder') }
                             onChange={(e) => setName(e.target.value)}
                             required
                           />
@@ -99,7 +102,7 @@ const ContactPage = () => {
                     <div className="flex -mx-3">
                       <div className="w-full px-3 mb-5">
                         <label className="text-xs font-semibold px-1 text-white text-xl">
-                          Email
+                        { t('contact.email') }
                         </label>
                         <div className="flex">
                           <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
@@ -119,7 +122,7 @@ const ContactPage = () => {
                     <div className="flex -mx-3">
                       <div className="w-full px-3 mb-5">
                         <label className="text-xs font-semibold px-1 text-white text-xl">
-                          Mensaje
+                        { t('contact.message') }
                         </label>
                         <div className="flex">
                           <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
@@ -141,7 +144,7 @@ const ContactPage = () => {
                           type="submit"
                           className="block w-full max-w-xs mx-auto bg-transparent hover:bg-green-700 focus:bg-lime-500 text-white rounded-lg px-3 py-3 font-semibold border-white border-2"
                         >
-                          {loading ? "Enviando ..." : "Enviar"}
+                          { loading ? t('contact.sending') : t('contact.send') }
                         </button>
                       </div>
                     </div>
@@ -153,8 +156,8 @@ const ContactPage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 md:p-14">
           <div className="item">
-            <p className="text-green-700">Información</p>
-            <h2 className="text-4xl mb-3">Como puedes contactarnos</h2>
+            <p className="text-green-700">{ t('general.information') }</p>
+            <h2 className="text-4xl mb-3">{ t('contact.contactUs') }</h2>
             <hr className="border-b-4 border-green-500 w-3/6 mb-3" />
             {contacts?.map((ci, index) => (
               <a

@@ -1,13 +1,15 @@
 import CrisisAlertIcon from "@mui/icons-material/CrisisAlert";
+import { useTranslation } from "react-i18next";
 const SectionInformation = () => {
+  const { t } = useTranslation();
 
   const informationList = [
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Aprovechamiento y reforestación con especies forestales de rápido crecimiento para producción de carbón vegetal ecológico (Especie capirona y otras de rápido crecimiento)`},
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Implementación de Biohuertos y uso de fitotoldos para producción de alimentos orgánicos.`},
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Aprovechamiento e instalación se sistemas agroforestales para producción, procesamiento y comercialización de súper alimentos como camu camu, huasai, ungurahui, sacha inchi, cocona, macambo, aguaje, para venta local, nacional e internacional.`},
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Aprovechamiento sostenible, procesamiento y comercialización de productos forestales no maderables como Palo Rosa, Sangre de Grado, Caucho, resinas, fibras,coloranes, para venta local, nacional e internacional`},
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Transferencia tecnológica e implementación de escuelas productivas (agrícola, forestal, avícola, acuícola) en la región.`},
-    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: `Desarrollo Plantaciones forestales con especies de alto valor comercial: caoba, cedro, shihuahuaco, andiroba, pali sangre, en tierras deforestadas.`}
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionA')},
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionB')},
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionC')},
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionD')},
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionE')},
+    {icon: <CrisisAlertIcon className="scale-150 item-center group-hover:text-white" />, text: t('sectionInformation.sectionF')}
 
   ]
   return (

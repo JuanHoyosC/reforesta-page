@@ -1,15 +1,22 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 const NavLinks = [
-  { title: "Inicio", url: "/" },
-  { title: "Acerca de nosotros", url: "/acerca-de-nosotros" },
-  { title: "Blog", url: "/blog" },
-  { title: "Contacto", url: "/contacto" },
+  { title: "home", url: "/" },
+  { title: "aboutUs", url: "/acerca-de-nosotros" },
+  { title: "blog", url: "/blog" },
+  { title: "contact", url: "/contacto" },
 ];
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  const changeLanguage = () => {
+    i18n.changeLanguage('en')
+  }
+  
   return (
     <div className="fixed w-full z-20">
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-slate-500 backdrop-filter backdrop-blur-lg bg-opacity-40">
@@ -19,8 +26,11 @@ export default function Navbar() {
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
               href="/"
             >
-              Reforestando Loreto
+              { t('navBar.title') }
             </a>
+            <button onClick={ changeLanguage }>
+              Change Language
+            </button>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -48,7 +58,7 @@ export default function Navbar() {
                     href={navlink.url}
                     className="px-3 py-2 flex items-center text-xs uppercase leading-snug text-white hover:opacity-75 hover:border-b-4 hover:border-green-500"
                   >
-                    <span className="ml-2">{navlink.title}</span>
+                    <span className="ml-2">{ t('navBar.' + navlink.title ) }</span>
                   </a>
                 </li>
               ))}
@@ -57,7 +67,7 @@ export default function Navbar() {
                   to="/donativos"
                   className="bg-green-500 hover:bg-green-700 px-12 md:px-5 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white rounded-full"
                 >
-                  Donativo
+                  { t('navBar.donation') }
                 </NavLink>
               </li>
             </ul>

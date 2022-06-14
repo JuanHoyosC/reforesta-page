@@ -3,11 +3,13 @@ import CardProjectItem from "../../components/CardProjectItem";
 import TopBanner from "../../components/TopBanner";
 import TempImage from "../../assets/img/footer-bg.jpg";
 import useBlog from "../../hooks/useBlog";
+import { useTranslation } from "react-i18next";
 const ProjectPage = () => {
+  const { t } = useTranslation();
   const {blogPosts} = useBlog(6);
   return (
       <>
-        <TopBanner image={TempImage} title="Blog de nuestros Proyectos" id="top" />
+        <TopBanner image={TempImage} title={ t('blog.title') } id="top" />
         <Container className="mt-5 md:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 mb-10">
             {

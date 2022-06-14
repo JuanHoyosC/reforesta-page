@@ -26,7 +26,6 @@ import SinglePost from "./pages/Web/SinglePost";
 import DonationAdmin from "./pages/Admin/DonationAdmin";
 import Donations from "./components/Donations";
 import MapaPage from "./pages/Admin/MapaPage";
-
 function App() {
   return (
     <AuthProvider>

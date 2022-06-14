@@ -5,10 +5,13 @@ import useSocialNetwork from "../hooks/useSocialNetwork";
 import { convertToBoolean } from "../utils/parseBoolean";
 import useContact from "../hooks/useContact";
 import ContactFooter from "./ContactFooter";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const { networks: social_networks } = useSocialNetwork();
   const { contacts } = useContact();
+  const year = new Date().getFullYear();
   return (
     <footer
       style={{
@@ -26,7 +29,7 @@ export default function Footer() {
             </div>
             <div className="w-full lg:w-4/12 px-4">
               <h4 className="text-3xl fonat-semibold text-white mb-2">
-                Redes Sociales
+                { t('footer.socialNetworks') }
               </h4>
               <hr className="border-b-4 border-green-500 w-1/6" />
               <div className="mt-6 lg:mb-0 mb-6 flex">
@@ -54,7 +57,7 @@ export default function Footer() {
             </div>
             <div className="w-full lg:w-4/12 px-4">
               <h4 className="text-3xl fonat-semibold text-white mb-2">
-                Contacto
+                { t('footer.contact') }
               </h4>
               <hr className="border-b-4 border-green-500 w-1/6" />
               <div className="mt-6 lg:mb-0 mb-6 ">
@@ -75,8 +78,8 @@ export default function Footer() {
         <div className="w-full md:w-6/12 px-4 mx-auto text-center">
           <div className="text-sm text-white py-1">
             Copyright ©{" "}
-            <span id="get-current-year">Reforestando Loreto 2022.</span>{" "}
-            Desarrollado por Da&Da Servicios Tecnológico
+            <span id="get-current-year"> { t('general.title') } { year }.</span>{" "}
+            { t('footer.autor') }
           </div>
         </div>
       </div>
