@@ -1,0 +1,2 @@
+<?php
+define("SENDGRID_API_KEY", "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");
