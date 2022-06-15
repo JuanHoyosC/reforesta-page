@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AuthCtx } from "../contexts";
 import { useTranslation } from "react-i18next";
+import ChangeLanguage from "../components/ChangeLanguage";
 const SecurePage = ({ children }: { children: JSX.Element }) => {
   const { t } = useTranslation();
   const [showSideBar, setShowSideBar] = useState<boolean>(true);
@@ -43,6 +44,7 @@ const SecurePage = ({ children }: { children: JSX.Element }) => {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                   { t('general.title') }
                 </Typography>
+                <ChangeLanguage />
                 <Button color="inherit" onClick={
                   ()=>{
                     logout();

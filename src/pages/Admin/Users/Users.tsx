@@ -16,8 +16,10 @@ import usePaginationHook from "../../../hooks/usePaginationHook";
 import TableItem from "../../../components/TableItem";
 import { confirmAlert } from "../../../utils/alerts";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 
 const Users = () => {
+  const { t } = useTranslation();
   const {
     totalPages,
     setTotalPages,
@@ -31,7 +33,7 @@ const Users = () => {
 
   let navigate = useNavigate();
 
-  const headersL = ["id", "usuario", "acciones"];
+  const headersL = [t('admin.users.id'), t('admin.users.userTable'), t('admin.users.actionsTable')];
 
   const getAllUser = async () => {
     const token = localStorage.getItem("token");
@@ -81,7 +83,7 @@ const Users = () => {
             navigate("/admin/usuarios/add", { replace: true });
           }}
         >
-          Nuevo Usuario
+          { t('admin.users.newUser') }
         </Button>
         <PageNotFound />
       </div>
@@ -91,14 +93,14 @@ const Users = () => {
   return (
     <>
       <NavTitle className="my-4">
-          <Typography color="text.primary">Usuarios</Typography>
+          <Typography color="text.primary">{ t('admin.navBar.users') }</Typography>
         </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/usuarios/add", { replace: true });
         }}
       >
-        Nuevo Usuario
+        { t('admin.users.newUser') }
       </Button>
       <Table headers={headersL}>
         <tbody>
@@ -133,7 +135,7 @@ const Users = () => {
                         deleteUser(data.user_id);
                       }}
                     >
-                      Borrar
+                      { t('admin.users.delete') }
                     </Button>
                     <Button
                       variant="outlined"
@@ -144,7 +146,7 @@ const Users = () => {
                         });
                       }}
                     >
-                      Editar
+                      { t('admin.users.edit') }
                     </Button>
                   </>
                 </TableItem>

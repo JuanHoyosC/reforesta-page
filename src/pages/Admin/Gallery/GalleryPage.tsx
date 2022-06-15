@@ -16,11 +16,13 @@ import {
   successDeleted,
 } from "../../../utils/alerts";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 interface GalleryPageProps {
   page?: string;
 }
 const Gallery: FC<GalleryPageProps> = ({ page }) => {
-  const headers = ["id", "imagen", "acciones"];
+  const { t } = useTranslation();
+  const headers = [t('admin.galery.id'), t('admin.galery.imageTable'), t('admin.galery.actionsTable')];
   let navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -137,14 +139,14 @@ const Gallery: FC<GalleryPageProps> = ({ page }) => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Galeria de imagenes</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.galery') }</Typography>
       </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/galeria-imagenes/add", { replace: true });
         }}
       >
-        Añadir imagenes
+        { t('admin.galery.addImage') }
       </Button>
       {!loading && totalPages >= 1 && (
         <>
@@ -181,7 +183,7 @@ const Gallery: FC<GalleryPageProps> = ({ page }) => {
                           startIcon={<DeleteIcon />}
                           onClick={() => deleteImage(image.gallery_id)}
                         >
-                          Borrar
+                          { t('admin.galery.delete') }
                         </Button>
                       </>
                     </TableItem>

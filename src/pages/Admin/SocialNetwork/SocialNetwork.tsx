@@ -11,8 +11,10 @@ import { updateSocialNetworkByIdServices } from "../../../services/socialnetwork
 import { errorMessage, succesAlert } from "../../../utils/alerts";
 import { convertToBoolean } from "../../../utils/parseBoolean";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 
 const SocialNetwork = () => {
+  const { t } = useTranslation();
   const { loading, networks } = useSocialNetwork();
   const [expanded, setExpanded] = useState<string | false>(false);
   const [checkedState, setCheckedState] = useState(new Array(3).fill(false));
@@ -60,7 +62,7 @@ const SocialNetwork = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Redes Sociales</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.socialNetworks') }</Typography>
       </NavTitle>
       {loading && <CircularProgress />}
       {!loading && (
@@ -87,7 +89,7 @@ const SocialNetwork = () => {
                   <form onSubmit={handleOnSubmit(network.network_id)}>
                     <label className="block my-5">
                       <span className="text-gray-700">
-                        Ingrese url de red social
+                        { t('admin.socialNetworks.url') }
                       </span>
                       <input
                         required
@@ -114,10 +116,10 @@ const SocialNetwork = () => {
                         onChange={handleOnChangeCehckBox(index)}
                       />
                       <span className="text-sm">
-                        Haga clic para activar o desactivar esta red social!
+                        { t('admin.socialNetworks.disabled') }
                       </span>
                     </label>
-                    <Button type={"submit"}>Guardar cambios</Button>
+                    <Button type={"submit"}>{ t('admin.socialNetworks.save') }</Button>
                   </form>
                 </AccordionDetails>
               </Accordion>

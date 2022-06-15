@@ -19,11 +19,14 @@ import { useNavigate } from "react-router-dom";
 import Table from "../../components/Table";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import NavTitle from "../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 const Dashboard = () => {
+
+  const { t } = useTranslation();
   let navigate = useNavigate();
 
-  const project_headers = ["titulo", "imagen", "accion"];
-  const parnerts_headers = ["id","imagen"];
+  const project_headers = [t('admin.main.titleTable'), t('admin.main.imageTable'), t('admin.main.actionTable')];
+  const parnerts_headers = [t('admin.main.id'), t('admin.main.imageTable')];
   const { loading: projects_laoding, projects } = useProjectFetch(4);
   const {loading , partners} = usePartner();
 
@@ -58,28 +61,28 @@ const Dashboard = () => {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-2 gap-4 justify-center">
               <DashbaordCard
-                title="Total Sliders"
+                title={t('admin.main.totalSlider')}
                 quantity={data?.sliders}
                 icon={
                   <BoltOutlinedIcon className="scale-150 h-20 w-32 text-gray-300" />
                 }
               />
               <DashbaordCard
-                title="Total Imagenes en Galleria"
+                title={t('admin.main.totalGalery')}
                 quantity={data?.gallery}
                 icon={
                   <BoltOutlinedIcon className="scale-150 h-20 w-32 text-gray-300" />
                 }
               />
               <DashbaordCard
-                title="Total Proyectos"
+                title={t('admin.main.totalProjects')}
                 quantity={data?.projects}
                 icon={
                   <BoltOutlinedIcon className="scale-150 h-20 w-32 text-gray-300" />
                 }
               />
               <DashbaordCard
-                title="Total de Socios"
+                title={t('admin.main.totalSocios')}
                 quantity={data?.partners}
                 icon={
                   <BoltOutlinedIcon className="scale-150 h-20 w-32 text-gray-300" />
@@ -99,7 +102,7 @@ const Dashboard = () => {
                   id={`panel1bh-header`}
                 >
                   <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Ultimos Proyectos
+                    { t('admin.main.lastProjects') }
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -171,7 +174,7 @@ const Dashboard = () => {
                   id={`panel1bh-header`}
                 >
                   <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Ultimas Imagenes de la Galleria
+                  { t('admin.main.lastImages') }
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>

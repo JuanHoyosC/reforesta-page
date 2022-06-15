@@ -12,8 +12,12 @@ import {
   successDeleted,
 } from "../../../utils/alerts";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 const ContactPageAdmin = () => {
-  const headers = ["id", "tipo", "descripcion", "acciones"];
+
+  const { t } = useTranslation();
+
+  const headers = [t('admin.contact.id'), t('admin.contact.typeTable'), t('admin.contact.descriptionTable'), t('admin.contact.actionsTable')];
 
   const { contacts, loading, getAllContacts } = useContact();
   const navigate = useNavigate();
@@ -36,14 +40,14 @@ const ContactPageAdmin = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Contactos</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.contact') }</Typography>
       </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/contacto/add", { replace: true });
         }}
       >
-        Añadir nuevo contacto
+        { t('admin.contact.addContact') }
       </Button>
       <Table headers={headers}>
         <tbody>
@@ -81,7 +85,7 @@ const ContactPageAdmin = () => {
                       startIcon={<DeleteIcon />}
                       onClick={() => hanlderDeleteContact(con.contact_id)}
                     >
-                      Borrar
+                      { t('admin.contact.delete') }
                     </Button>
                     <Button 
                       variant="outlined" 
@@ -89,7 +93,7 @@ const ContactPageAdmin = () => {
                       onClick={()=>{
                         navigate("/admin/contacto/"+con.contact_id,{ replace: true });
                       }}>
-                      Editar
+                      { t('admin.contact.edit') }
                     </Button>
                   </>
                 </TableItem>

@@ -15,10 +15,12 @@ import {
 import Pagination from "../../../components/Pagination";
 import usePartner from "../../../hooks/usePartner";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 
 const PartnerPage = () => {
+  const { t } = useTranslation();
   let navigate = useNavigate();
-  const headers = ["id", "imagen", "acciones"];
+  const headers = [t('admin.socios.id') , t('admin.socios.imageTable'), t('admin.socios.actionsTable')];
   const {
     currentPage,
     totalPages,
@@ -47,14 +49,14 @@ const PartnerPage = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Socios</Typography>
+        <Typography color="text.primary"> { t('admin.navBar.socios') } </Typography>
       </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/socios/add", { replace: true });
         }}
       >
-        Añadir imagenes
+        { t('admin.socios.addImages') }
       </Button>
       <Table headers={headers}>
         <tbody>
@@ -87,7 +89,7 @@ const PartnerPage = () => {
                     startIcon={<DeleteIcon />}
                     onClick={() => deletePartnerById(partnerItem.partner_id)}
                   >
-                    Borrar
+                    { t('admin.socios.delete') }
                   </Button>
                 </TableItem>
               </tr>

@@ -1,11 +1,13 @@
 import { Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import NavTitle from "../../../components/NavTitle";
 import { uploadPartnerService } from "../../../services/partner.services";
 import { errorMessage, succesAlert } from "../../../utils/alerts";
 
 const FormPartner = () => {
+  const { t } = useTranslation();
   const [files, setFiles] = useState<any>([]);
   let navigate = useNavigate();
   const uploadImages = async () => {
@@ -24,8 +26,8 @@ const FormPartner = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Socios</Typography>
-        <Typography color="text.primary">Añadir socios</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.socios') }</Typography>
+        <Typography color="text.primary"> { t('admin.socios.addSocios') } </Typography>
       </NavTitle>
       <input
         type="file"
@@ -33,7 +35,7 @@ const FormPartner = () => {
         id="image"
         onChange={(e) => setFiles(e?.target?.files)}
       />
-      <Button onClick={uploadImages}>Añadir</Button>
+      <Button onClick={uploadImages}>{ t('admin.socios.add') }</Button>
     </>
   );
 };

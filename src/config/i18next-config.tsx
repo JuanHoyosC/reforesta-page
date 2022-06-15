@@ -10,9 +10,11 @@ i18n.use(LanguageDetector).use(initReactI18next)
           translation: {
                 "general": {
                     title: "REFORESTA LORETO",
-                    galery: "Galeria",
+                    galery: "Galería",
                     information: "Información",
-                    logout: "Salir"
+                    logout: "Salir",
+                    english: "Inglés",
+                    spanish: "Español"
                 },
                 "navBar": {
                     title: "REFORESTANDO LORETO",
@@ -72,6 +74,100 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     password: "Contraseña",
                     login: "Ingresar"
                 },
+                "admin": {
+                    "navBar": {
+                        main: "Principal",
+                        home: "Inicio",
+                        slider: "Slider",
+                        socios: "Socios",
+                        information: "Información",
+                        socialNetworks: "Redes sociales",
+                        contact: "Contacto",
+                        donation: "Donación",
+                        map: "Mapa",
+                        admin: "Admin",
+                        projects: "Proyectos",
+                        galery: "Galería de imagenes",
+                        users: "Usuarios"
+                    },
+                    "main": {
+                        title: "Inicio",
+                        totalSlider: "TOTAL SLIDERS",
+                        totalGalery: "TOTAL IMAGENES EN GALLERIA",
+                        totalProjects: "TOTAL PROYECTOS",
+                        totalSocios: "TOTAL DE SOCIOS",
+                        lastProjects: "últimos proyectos",
+                        lastImages: "últimas imagenes de la galería",
+                        titleTable: "Titulo",
+                        imageTable: "Imagen",
+                        actionTable: "Acción",
+                        id: "Id"
+                    },
+                    "slider": {
+                        addSlider: "AÑADIR SLIDER",
+                        id: "Id",
+                        imageTable: "Imagen",
+                        titleTable: "Titulo",
+                        descriptionTable: "Descripción",
+                        actionsTable: "Acciones",
+                        delete: "Borrar",
+                        edit: "Editar"
+                    },
+                    "socios": {
+                        addImages: "AÑADIR IMAGENES",
+                        id: "Id",
+                        imageTable: "Imagen",
+                        actionsTable: "Acciones",
+                        delete: "Delete",
+                        add: "Add"
+                    },
+                    "socialNetworks": {
+                        url: "Ingrese la URL de la red social",
+                        save: "GUARDAR CAMBIOS",
+                        disabled: "Haga clic para activar o desactivar esta red social!"
+                    },
+                    "contact": {
+                        addContact: "Añadir nuevo contacto",
+                        id: "Id",
+                        typeTable: "Tipo",
+                        descriptionTable: "Descripción",
+                        actionsTable: "Acciones",
+                        delete: "Borrar",
+                        edit: "Editar",
+                        email: "Correo"
+                    },
+                    "donation": {
+                        content: "Contenido",
+                        save: "Guardar"
+                    },
+                    "map": {
+                        save: "Guardar"
+                    },
+                    "projects": {
+                        addProject: "Añadir Proyecto",
+                        id: "Id",
+                        imageTable: "Imagen",
+                        titleTable: "Titulo",
+                        actionsTable: "Acciones",
+                        delete: "Borrar",
+                        edit: "Editar"
+                    },
+                    "galery": {
+                        addImage: "Añadir imagen",
+                        id: "Id",
+                        imageTable: "Imagen",
+                        actionsTable: "Accuibes",
+                        delete: "Borrar",
+                    },
+                    "users": {
+                        newUser: "Nuevo Usuario",
+                        id: "Id",
+                        userTable: "Usuario",
+                        actionsTable: "Acciones",
+                        delete: "Borrar",
+                        edit: "Editar"
+                    }
+                },
                 "notFound": {
                     notFound: "Lo sentimos! Esta sección no se encuentra disponible.",
                     goHome: "Regresar al Inicio"
@@ -83,7 +179,10 @@ i18n.use(LanguageDetector).use(initReactI18next)
                 "general": {
                     title: "REFORESTA LORETO",
                     galery: "Galery",
-                    information: "Information"
+                    logout: "Logout",
+                    information: "Information",                    
+                    english: "English",
+                    spanish: "Spanish"
                 },
                 "navBar": {
                     title: "REFORESTANDO LORETO",
@@ -142,6 +241,100 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     user: "User",
                     password: "Password",
                     login: "Login"
+                },
+                "admin": {
+                    "navBar": {
+                        main: "Main",
+                        home: "Home",
+                        slider: "Slider",
+                        socios: "Partners",
+                        information: "Information",
+                        socialNetworks: "social networks",
+                        contact: "Contact",
+                        donation: "Donation",
+                        map: "Map",
+                        admin: "Admin",
+                        projects: "Projects",
+                        galery: "Image gallery",
+                        users: "Users"
+                    },
+                    "main": {
+                        title: "Main",
+                        totalSlider: "TOTAL SLIDERS",
+                        totalGalery: "TOTAL IMAGES IN GALLERY",
+                        totalProjects: "TOTAL PROJECTS",
+                        totalSocios: "TOTAL PARTNERS",
+                        lastProjects: "Last projects",
+                        lastImages: "Latest Gallery Images",
+                        titleTable: "Title",
+                        imageTable: "Image",
+                        actionTable: "Action",
+                        id: "id"
+                    },
+                    "slider": {
+                        addSlider: "ADD SLIDER",
+                        id: "id",
+                        imageTable: "Image",
+                        titleTable: "Title",
+                        descriptionTable: "Descriptión",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                        edit: "Edit"
+                    },
+                    "socios": {
+                        addImages: "ADD IMAGES",
+                        id: "Id",
+                        imageTable: "Image",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                        add: "Add"
+                    },
+                    "socialNetworks": {
+                        url: "Enter social network url",
+                        save: "SAVE CHANGES",
+                        disabled: "Click to activate or deactivate this social network!"
+                    },
+                    "contact": {
+                        addContact: "Add new contact",
+                        id: "Id",
+                        typeTable: "Type",
+                        descriptionTable: "Description",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                        edit: "Edit",
+                        email: "Email"
+                    },
+                    "donation": {
+                        content: "Content",
+                        save: "Save"
+                    },
+                    "map": {
+                        save: "Save"
+                    },
+                    "projects": {
+                        addProject: "Add project",
+                        id: "Id",
+                        imageTable: "Image",
+                        titleTable: "Title",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                        edit: "Edit"
+                    },
+                    "galery": {
+                        addImage: "Add image",
+                        id: "Id",
+                        imageTable: "Image",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                    },
+                    "users": {
+                        newUser: "Ner User",
+                        id: "Id",
+                        userTable: "User",
+                        actionsTable: "Actions",
+                        delete: "Delete",
+                        edit: "Edit"
+                    }
                 },
                 "notFound": {
                     notFound: "We're sorry! This section is not available.",

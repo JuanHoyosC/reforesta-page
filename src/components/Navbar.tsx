@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import ChangeLanguage from "./ChangeLanguage";
 
 const NavLinks = [
   { title: "home", url: "/" },
@@ -10,12 +11,8 @@ const NavLinks = [
 ];
 
 export default function Navbar() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-
-  const changeLanguage = () => {
-    i18n.changeLanguage('en')
-  }
   
   return (
     <div className="fixed w-full z-20">
@@ -28,9 +25,6 @@ export default function Navbar() {
             >
               { t('navBar.title') }
             </a>
-            <button onClick={ changeLanguage }>
-              Change Language
-            </button>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -48,6 +42,7 @@ export default function Navbar() {
             }
             id="example-navbar-danger"
           >
+            <ChangeLanguage />
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               {NavLinks.map((navlink, index) => (
                 <li

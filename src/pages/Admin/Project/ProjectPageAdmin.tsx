@@ -13,9 +13,11 @@ import {
   errorMessage,
 } from "../../../utils/alerts";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 const ProjectPageAdmin = () => {
+  const { t } = useTranslation();
   let navigate = useNavigate();
-  const headers = ["id", "titulo", "imagen", "acciones"];
+  const headers = [t('admin.projects.id'), t('admin.projects.titleTable'), t('admin.projects.imageTable'), t('admin.projects.actionsTable')];
   const {
     currentPage,
     getAllProjects,
@@ -44,14 +46,14 @@ const ProjectPageAdmin = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Proyectos</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.projects') }</Typography>
       </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/proyectos/add", { replace: true });
         }}
       >
-        Añadir proyecto
+        { t('admin.projects.addProject') }
       </Button>
       <Table headers={headers}>
         <tbody>
@@ -98,7 +100,7 @@ const ProjectPageAdmin = () => {
                       startIcon={<DeleteIcon />}
                       onClick={()=>handlerDeleteProjectPost(project.project_id)}
                     >
-                      Borrar
+                      { t('admin.projects.delete') }
                     </Button>
                     <Button
                       variant="outlined"
@@ -109,7 +111,7 @@ const ProjectPageAdmin = () => {
                         });
                       }}
                     >
-                      Editar
+                      { t('admin.projects.delete') }
                     </Button>
                   </>
                 </TableItem>

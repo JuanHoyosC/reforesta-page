@@ -1,10 +1,12 @@
 import { Alert, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import request from "../../../API";
 import NavTitle from "../../../components/NavTitle";
 
 export const FormUser = () => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isSuccess, setIsSuccess] = useState(false);
@@ -93,7 +95,7 @@ export const FormUser = () => {
   return (
     <div className="my-10">
       <NavTitle className="my-4">
-      <Typography color="text.primary">Usuarios</Typography>
+      <Typography color="text.primary">{ t('admin.navBar.users') }</Typography>
         <Typography color="text.primary">
           {id ? "Editar Usuario" :  "Añadir Usuario"}
         </Typography>

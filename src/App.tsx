@@ -26,7 +26,16 @@ import SinglePost from "./pages/Web/SinglePost";
 import DonationAdmin from "./pages/Admin/DonationAdmin";
 import Donations from "./components/Donations";
 import MapaPage from "./pages/Admin/MapaPage";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 function App() {
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    let lang = localStorage.getItem('language');
+    lang = lang ? lang : 'es';
+    i18n.changeLanguage(lang);
+  }, [i18n]);
   return (
     <AuthProvider>
       <BrowserRouter>

@@ -13,9 +13,11 @@ import Pagination from "../../../components/Pagination";
 import { deleteSliderService } from "../../../services/slider.services";
 import useSlider from "../../../hooks/useSlider";
 import NavTitle from "../../../components/NavTitle";
+import { useTranslation } from "react-i18next";
 const SliderPage = () => {
+  const { t } = useTranslation();
   let navigate = useNavigate();
-  const headers = ["id", "imagen", "titulo", "descripcion", "acciones"];
+  const headers = [t('admin.slider.id'), t('admin.slider.imageTable'), t('admin.slider.titleTable'), t('admin.slider.descriptionTable'), t('admin.slider.actionsTable')];
 
   const {
     sliders,
@@ -45,14 +47,14 @@ const SliderPage = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Slider</Typography>
+        <Typography color="text.primary">{ t('admin.navBar.slider') }</Typography>
       </NavTitle>
       <Button
         onClick={() => {
           navigate("/admin/slider/add", { replace: true });
         }}
       >
-        Añadir Slider
+        { t('admin.slider.addSlider') }
       </Button>
       <Table headers={headers}>
         <tbody>
@@ -107,7 +109,7 @@ const SliderPage = () => {
                       startIcon={<DeleteIcon />}
                       onClick={() => handlerDeleteSlider(sliderItem.slider_id)}
                     >
-                      Borrar
+                      { t('admin.slider.delete') }
                     </Button>
                     <Button
                       variant="outlined"
@@ -118,7 +120,7 @@ const SliderPage = () => {
                         });
                       }}
                     >
-                      Editar
+                      { t('admin.slider.edit') }
                     </Button>
                   </>
                 </TableItem>
