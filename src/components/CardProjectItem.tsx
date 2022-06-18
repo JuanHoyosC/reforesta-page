@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import demoImage from "../assets/img/home-image.png";
 
@@ -16,6 +17,7 @@ const CardProjectItem: FC<CardProjectItem> = ({
   description,
   image,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="rounded-lg">
       <img
@@ -25,9 +27,9 @@ const CardProjectItem: FC<CardProjectItem> = ({
         loading="lazy"
       />
       <Link to={"/blog/" + slug} className="break-words text-xl text-cyan-900">
-        {title ? title.substring(0, 50).toUpperCase() + "..." : "Titulo del proyecto"}
+        {title ? title.substring(0, 50).toUpperCase() + "..." : t('general.projectTitle')}
         <p className="mb-5 break-words text-sm">
-          {"Continuar leyendo >>"}
+          {t('general.reading')}
         </p>
       </Link>
     </div>

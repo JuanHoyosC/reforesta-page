@@ -1,11 +1,13 @@
 import { Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import NavTitle from "../../../components/NavTitle";
 import { createContactService, editContactService, getContactByIdService } from "../../../services/contact.services";
 import { errorMessage, succesAlert } from "../../../utils/alerts";
 
 const FormContactAdmin = () => {
+  const { t } = useTranslation();
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -75,16 +77,16 @@ const FormContactAdmin = () => {
   return (
     <>
       <NavTitle className="my-4">
-        <Typography color="text.primary">Contactos</Typography>
+        <Typography color="text.primary">{ t('admin.contact.contacts') }</Typography>
         <Typography color="text.primary">
-          {id ? "Editar Contacto" : "Añadir Contacto"}
+          {id ? "Editar Contacto" : t('admin.contact.addContact')}
         </Typography>
       </NavTitle>
       <div className="my-5">
         <form onSubmit={handleSubmit}>
           <label className="block">
             <span className="text-gray-700">
-              Seleccion el tipo de contacto a crear
+              { t('admin.contact.select') }
             </span>
             <select
               name="contact_type"
@@ -98,13 +100,13 @@ const FormContactAdmin = () => {
                 focus:ring-indigo-200 focus:ring-opacity-50"
               onChange={(e) => setTypeContact(e.target.value)}
             >
-              <option value={"Correo"} selected={typeContact==="Correo"} >Correo</option>
-              <option value={"Direccion"} selected={typeContact==="Direccion"}>Dirección</option>
-              <option value={"Telefono"} selected={typeContact==="Telefono"}>Teléfono</option>
+              <option value={"Correo"} selected={typeContact==="Correo"} >{ t('admin.contact.email') }</option>
+              <option value={"Direccion"} selected={typeContact==="Direccion"}>{ t('admin.contact.address') }</option>
+              <option value={"Telefono"} selected={typeContact==="Telefono"}>{ t('admin.contact.phone') }</option>
             </select>
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Ingrese dato de contacto</span>
+            <span className="text-gray-700">{ t('admin.contact.enterAContact') }</span>
             <input
               required
               type="text"
@@ -118,13 +120,13 @@ const FormContactAdmin = () => {
               focus:ring 
               focus:ring-indigo-200 
               focus:ring-opacity-50"
-              placeholder="Titulo"
+              placeholder={ t('admin.contact.title') }
               name="contact_description"
               onChange={(e) => handleContentContact(e.target.value)}
             />
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Enlace de contacto</span>
+            <span className="text-gray-700">{ t('admin.contact.url') }</span>
             <input
               required
               value={urlContact}
@@ -138,12 +140,12 @@ const FormContactAdmin = () => {
               focus:ring 
               focus:ring-indigo-200 
               focus:ring-opacity-50"
-              placeholder="Titulo"
+              placeholder={ t('admin.contact.title') }
               name="contact_url"
               onChange={(e) => setUrlContact(e.target.value)}
             />
           </label>
-          <Button type="submit">Guardar</Button>
+          <Button type="submit"> { t('admin.contact.save') } </Button>
         </form>
       </div>
     </>

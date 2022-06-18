@@ -97,7 +97,7 @@ export const FormUser = () => {
       <NavTitle className="my-4">
       <Typography color="text.primary">{ t('admin.navBar.users') }</Typography>
         <Typography color="text.primary">
-          {id ? "Editar Usuario" :  "Añadir Usuario"}
+          {id ? t('admin.users.editUser') :  t('admin.users.addUser')}
         </Typography>
       </NavTitle>
       {showMessage && isSuccess && (
@@ -107,7 +107,7 @@ export const FormUser = () => {
             setShowMessage(!showMessage);
           }}
         >
-          Usuario registrado con exito!
+          {t('admin.users.userRegister')}
         </Alert>
       )}
       {showMessage && !isSuccess && (
@@ -117,19 +117,19 @@ export const FormUser = () => {
             setShowMessage(!showMessage);
           }}
         >
-          Usuario no registrado con exito!
+          {t('admin.users.userNoRegister')}
         </Alert>
       )}
       <form className="my-5" onSubmit={handlerSubmit}>
         <div className="flex flex-col ">
           <div className="my-5">
             <label className="block">
-              <span className="text-gray-700">Usuario</span>
+              <span className="text-gray-700">{ t('admin.users.user') }</span>
               <input
                 required
                 type="text"
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="Usuario"
+                placeholder={ t('admin.users.user') }
                 value={user ? user : ""}
                 onChange={(e) => setUser(e.target.value)}
               />
@@ -137,19 +137,19 @@ export const FormUser = () => {
           </div>
           <div className="my-5">
             <label className="block">
-              <span className="text-gray-700">Contraseña</span>
+              <span className="text-gray-700">{ t('admin.users.password') }</span>
               <input
                 required
                 type="text"
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="Contraseña"
+                placeholder={ t('admin.users.password') }
                 value={password ? password : ""}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
           </div>
-          {!id && <Button type="submit">Guardar</Button>}
-          {id && <Button type="submit">Guardar Cambios</Button>}
+          {!id && <Button type="submit">{ t('admin.users.save') }</Button>}
+          {id && <Button type="submit">{ t('admin.users.saveChanges') }</Button>}
         </div>
       </form>
     </div>

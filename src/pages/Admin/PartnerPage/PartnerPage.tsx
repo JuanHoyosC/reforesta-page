@@ -81,7 +81,7 @@ const PartnerPage = () => {
                   <p>{partnerItem.partner_id}</p>
                 </TableItem>
                 <TableItem>
-                  <img src={partnerItem.partner_image} alt="galleria" loading="lazy"/>
+                  <img src={partnerItem.partner_image} alt="galery" loading="lazy"/>
                 </TableItem>
                 <TableItem>
                   <Button

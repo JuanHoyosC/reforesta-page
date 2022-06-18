@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import NavTitle from "../../../components/NavTitle";
 import { uploadImageService } from "../../../services/gallery.services";
@@ -8,6 +9,7 @@ import {
   succesAlert,
 } from "../../../utils/alerts";
 const FormImage = () => {
+  const { t } = useTranslation();
   const [files, setFiles] = useState<any>([]);
   let navigate = useNavigate();
 
@@ -26,8 +28,8 @@ const FormImage = () => {
   return (
     <>
       <NavTitle className="my-4">
-          <Typography color="text.primary">Galeria de imagenes</Typography>
-          <Typography color="text.primary">Añadir Imagen</Typography>
+          <Typography color="text.primary">{ t('admin.galery.galery') }</Typography>
+          <Typography color="text.primary">{ t('admin.galery.add') }</Typography>
         </NavTitle>
       <input
         type="file"
@@ -35,7 +37,7 @@ const FormImage = () => {
         id="image"
         onChange={(e) => setFiles(e?.target?.files)}
       />
-      <Button onClick={uploadImages}>Subir Imagen</Button>
+      <Button onClick={uploadImages}>{ t('admin.galery.upload') }</Button>
     </>
   );
 };

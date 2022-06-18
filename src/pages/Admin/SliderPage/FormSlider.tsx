@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { ISlider } from "../../../App.interfaces";
 import NavTitle from "../../../components/NavTitle";
@@ -15,6 +16,7 @@ import {
 } from "../../../utils/alerts";
 
 const FormSlider = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   let navigate = useNavigate();
   const [title, setTitle] = useState("");
@@ -36,7 +38,7 @@ const FormSlider = () => {
 
   const handlerUploadSlider = () => {
     if (file === null) {
-      warningMessage("Seleccione una imagen");
+      warningMessage(t('admin.slider.chooseImage'));
     } else {
       let fData = createFormData();
       const token = localStorage.getItem("token");
@@ -84,9 +86,9 @@ const FormSlider = () => {
   return (
     <div className="mt-5">
       <NavTitle>
-      <Typography color="text.primary">Slider</Typography>
+      <Typography color="text.primary"> { t('admin.navBar.slider') } </Typography>
         <Typography color="text.primary">
-          {id ? "Editar Slider" : "Añadir Slider"}
+          {id ? t('admin.slider.editSlider') : t('admin.slider.addSlider')}
         </Typography>
       </NavTitle>
       <div className="mt-5">
@@ -102,7 +104,7 @@ const FormSlider = () => {
           }}
         >
           <label className="block my-5">
-            <span className="text-gray-700">Titulo</span>
+            <span className="text-gray-700">{ t('admin.slider.titleTable') }</span>
             <input
               required
               type="text"
@@ -115,13 +117,13 @@ const FormSlider = () => {
                   focus:ring 
                   focus:ring-indigo-200 
                   focus:ring-opacity-50"
-              placeholder="Titulo"
+              placeholder={ t('admin.slider.titleTable') }
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Descripcion</span>
+            <span className="text-gray-700">{ t('admin.slider.descriptionTable') }</span>
             <input
               required
               type="text"
@@ -134,7 +136,7 @@ const FormSlider = () => {
                   focus:ring 
                   focus:ring-indigo-200 
                   focus:ring-opacity-50"
-              placeholder="Descripción"
+              placeholder={ t('admin.slider.descriptionTable') }
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
@@ -142,7 +144,7 @@ const FormSlider = () => {
             />
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Imagen Destacada</span>
+            <span className="text-gray-700"> {t('admin.slider.mainImage')} </span>
             <input
               type="file"
               name="files"
@@ -150,7 +152,7 @@ const FormSlider = () => {
               onChange={(e) => handlerSetFile(e)}
             />
           </label>
-          <Button type="submit">Guardar</Button>
+          <Button type="submit"> { t('admin.slider.save') } </Button>
         </form>
       </div>
     </div>

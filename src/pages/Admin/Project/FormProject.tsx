@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { IProject } from "../../../App.interfaces";
 import Editor from "../../../components/Editor";
@@ -17,6 +18,7 @@ import {
 import { slugify } from "../../../utils/slugify";
 
 const FormProject = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   let navigate = useNavigate();
 
@@ -86,8 +88,8 @@ const FormProject = () => {
   return (
     <div className="mt-5">
       <NavTitle className="my-4">
-        <Typography color="text.primary">Proyectos</Typography>
-        <Typography color="text.primary">Añadir</Typography>
+        <Typography color="text.primary">{ t('admin.projects.projects') }</Typography>
+        <Typography color="text.primary">{ t('admin.projects.add') }</Typography>
       </NavTitle>
       <div className="mt-5">
         <form
@@ -101,7 +103,7 @@ const FormProject = () => {
           }}
         >
           <label className="block my-5">
-            <span className="text-gray-700">Titulo</span>
+            <span className="text-gray-700">{ t('admin.projects.titleTable') }</span>
             <input
               required
               type="text"
@@ -115,13 +117,13 @@ const FormProject = () => {
               focus:ring 
               focus:ring-indigo-200 
               focus:ring-opacity-50"
-              placeholder="Titulo"
+              placeholder={ t('admin.projects.titleTable') }
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Imagen Destacada</span>
+            <span className="text-gray-700">{ t('admin.projects.mainImage') }</span>
             <input
               type="file"
               name="files"
@@ -134,15 +136,15 @@ const FormProject = () => {
               focus:ring 
               focus:ring-indigo-200 
               focus:ring-opacity-50"
-              placeholder="Titulo"
+              placeholder={ t('admin.projects.titleTable') }
               onChange={(e) => handlerSetFile(e)}
             />
           </label>
           <label className="block my-5">
-            <span className="text-gray-700">Contenido</span>
+            <span className="text-gray-700">{ t('admin.projects.content') }</span>
             <Editor setContent={setContent} content={content} />
           </label>
-          <Button type="submit">Guardar</Button>
+          <Button type="submit">{ t('admin.projects.save') }</Button>
         </form>
       </div>
     </div>

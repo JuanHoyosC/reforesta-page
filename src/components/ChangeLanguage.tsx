@@ -15,7 +15,7 @@ export default function ChangeLanguage() {
   }
   
   return (
-    <select name="language" value={language} id="language" onChange={ changeLanguage }>
+    <select style={{ color: '#000' }} name="language" value={language} id="language" onChange={ changeLanguage }>
         <option key="es" value="es">{ t('general.spanish') }</option>
         <option key="en" value="en">{ t('general.english') }</option>
     </select>

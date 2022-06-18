@@ -14,7 +14,9 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     information: "Información",
                     logout: "Salir",
                     english: "Inglés",
-                    spanish: "Español"
+                    spanish: "Español",
+                    reading: "Continuar leyendo >>",
+                    projectTitle: "Título del proyecto"
                 },
                 "navBar": {
                     title: "REFORESTANDO LORETO",
@@ -33,10 +35,10 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     lastProjects: "Últimos proyectos"
                 },
                 "sectionInformation": {
-                    sectionA: "Aprovechamiento y reforestación con especies forestales de rápido crecimiento para producción de carbón vegetal ecológico (Especie capirona y otras de rápido crecimiento)",
+                    sectionA: "Aprovechamiento y reforestación con especies forestales de rápido crecimiento para producción de carbón vegetal ecológico (Especie capirona y otras de rápido crecimiento).",
                     sectionB: "Implementación de Biohuertos y uso de fitotoldos para producción de alimentos orgánicos.",
                     sectionC: "Aprovechamiento e instalación se sistemas agroforestales para producción, procesamiento y comercialización de súper alimentos como camu camu, huasai, ungurahui, sacha inchi, cocona, macambo, aguaje, para venta local, nacional e internacional.",
-                    sectionD: "Aprovechamiento sostenible, procesamiento y comercialización de productos forestales no maderables como Palo Rosa, Sangre de Grado, Caucho, resinas, fibras,coloranes, para venta local, nacional e internacional",
+                    sectionD: "Aprovechamiento sostenible, procesamiento y comercialización de productos forestales no maderables como Palo Rosa, Sangre de Grado, Caucho, resinas, fibras,coloranes, para venta local, nacional e internacional.",
                     sectionE: "Transferencia tecnológica e implementación de escuelas productivas (agrícola, forestal, avícola, acuícola) en la región.",
                     sectionF: "Desarrollo Plantaciones forestales con especies de alto valor comercial: caoba, cedro, shihuahuaco, andiroba, pali sangre, en tierras deforestadas."
                 },
@@ -98,18 +100,22 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         totalSocios: "TOTAL DE SOCIOS",
                         lastProjects: "últimos proyectos",
                         lastImages: "últimas imagenes de la galería",
-                        titleTable: "Titulo",
+                        titleTable: "Título",
                         imageTable: "Imagen",
                         actionTable: "Acción",
                         id: "Id"
                     },
                     "slider": {
-                        addSlider: "AÑADIR SLIDER",
+                        addSlider: "Añadir slider",
+                        editSlider: "Edit slider",
                         id: "Id",
                         imageTable: "Imagen",
-                        titleTable: "Titulo",
+                        titleTable: "Título",
                         descriptionTable: "Descripción",
                         actionsTable: "Acciones",
+                        mainImage: "Imagen destacada",
+                        chooseImage: "Seleccione una imagen",
+                        save: "GUARDAR",
                         delete: "Borrar",
                         edit: "Editar"
                     },
@@ -118,8 +124,9 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         id: "Id",
                         imageTable: "Imagen",
                         actionsTable: "Acciones",
-                        delete: "Delete",
-                        add: "Add"
+                        delete: "Borrar",
+                        addSocios: "Añadir socios",
+                        add: "Añadir"
                     },
                     "socialNetworks": {
                         url: "Ingrese la URL de la red social",
@@ -134,7 +141,15 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         actionsTable: "Acciones",
                         delete: "Borrar",
                         edit: "Editar",
-                        email: "Correo"
+                        email: "Correo",
+                        phone: "Teléfono",
+                        address: "Dirección",
+                        contacts: "Contactos",
+                        enterAContact: "Ingrese dato de contacto",
+                        title: "Título",
+                        url: "Enlace de contacto",
+                        select: "Seleccione el tipo de contacto a crear",
+                        save: "Guardar"
                     },
                     "donation": {
                         content: "Contenido",
@@ -147,10 +162,15 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         addProject: "Añadir Proyecto",
                         id: "Id",
                         imageTable: "Imagen",
-                        titleTable: "Titulo",
+                        titleTable: "Título",
                         actionsTable: "Acciones",
                         delete: "Borrar",
-                        edit: "Editar"
+                        edit: "Editar",
+                        projects: "Proyectos",
+                        add: "Añadir",
+                        mainImage: "Imagen destacada",
+                        save: "Guardar",
+                        content: "Contenido"
                     },
                     "galery": {
                         addImage: "Añadir imagen",
@@ -158,6 +178,9 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         imageTable: "Imagen",
                         actionsTable: "Accuibes",
                         delete: "Borrar",
+                        upload: "Subir imagen",
+                        add: "Añadir imagen",
+                        galery: "Galería de imagenes"
                     },
                     "users": {
                         newUser: "Nuevo Usuario",
@@ -165,7 +188,15 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         userTable: "Usuario",
                         actionsTable: "Acciones",
                         delete: "Borrar",
-                        edit: "Editar"
+                        edit: "Editar",
+                        user: "Usuario",
+                        addUser: "Añadir usuario",
+                        editUser: "Editar usuario",
+                        userNoRegister: "Usuario no registrado!",
+                        userRegister: "Usuario registrado con éxito!",
+                        save: "Guardar",
+                        saveChanges: "Guardar cambios",
+                        password: "Contraseña"
                     }
                 },
                 "notFound": {
@@ -182,7 +213,9 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     logout: "Logout",
                     information: "Information",                    
                     english: "English",
-                    spanish: "Spanish"
+                    spanish: "Spanish",
+                    reading: "Continue reading >>",
+                    projectTitle: "Title of the project"
                 },
                 "navBar": {
                     title: "REFORESTANDO LORETO",
@@ -194,19 +227,19 @@ i18n.use(LanguageDetector).use(initReactI18next)
                 },
                 "home": {
                     socialBenefits: "INITIATIVES FOR SOCIAL BENEFIT",
-                    socialBenefitsDescription: "Fomento de iniciativas orientadas a crear o mejorar capacidades de producción de bienes o servicios bajo condiciones competitivas, rentables, sostenibles y sin efectos ambientales negativossignificativos.",
+                    socialBenefitsDescription: "Promotion of initiatives aimed at creating or improving production capacities for goods or services under competitive, profitable, sustainable conditions and without significant negative environmental effects.",
                     readMore: "Read more",
                     ourAllies: "Our allies in this process",
                     projects: "Projects",
                     lastProjects: "Last projects"
                 },
                 "sectionInformation": {
-                    sectionA: "Aprovechamiento y reforestación con especies forestales de rápido crecimiento para producción de carbón vegetal ecológico (Especie capirona y otras de rápido crecimiento)",
-                    sectionB: "Implementación de Biohuertos y uso de fitotoldos para producción de alimentos orgánicos.",
-                    sectionC: "Aprovechamiento e instalación se sistemas agroforestales para producción, procesamiento y comercialización de súper alimentos como camu camu, huasai, ungurahui, sacha inchi, cocona, macambo, aguaje, para venta local, nacional e internacional.",
-                    sectionD: "Aprovechamiento sostenible, procesamiento y comercialización de productos forestales no maderables como Palo Rosa, Sangre de Grado, Caucho, resinas, fibras,coloranes, para venta local, nacional e internacional",
-                    sectionE: "Transferencia tecnológica e implementación de escuelas productivas (agrícola, forestal, avícola, acuícola) en la región.",
-                    sectionF: "Desarrollo Plantaciones forestales con especies de alto valor comercial: caoba, cedro, shihuahuaco, andiroba, pali sangre, en tierras deforestadas."
+                    sectionA: "Exploitation and reforestation with fast-growing forest species for the production of ecological charcoal (Capirona species and other fast-growing species).",
+                    sectionB: "Implementation of bio-gardens and use of phyto-toldos for the production of organic food.",
+                    sectionC: "Use and installation of agroforestry systems for the production, processing and marketing of super foods such as camu camu, huasai, ungurahui, sacha inchi, cocona, macambo, aguaje, for local, national and international sale.",
+                    sectionD: "Sustainable use, processing and marketing of non-timber forest products such as Palo Rosa, Sangre de Grado, Rubber, resins, fibers, dyes, for local, national and international sale.",
+                    sectionE: "Technology transfer and implementation of productive schools (agricultural, forestry, poultry, aquaculture) in the region.",
+                    sectionF: "Development Forest plantations with species of high commercial value: mahogany, cedar, shihuahuaco, andiroba, pali sangre, on deforested lands."
                 },
                 "blog": {
                     title: "Blog of our Projects"
@@ -214,11 +247,11 @@ i18n.use(LanguageDetector).use(initReactI18next)
                 "aboutUs": {
                     title: "ABOUT US",
                     title2: "About Us",
-                    description: "",
+                    description: "We are a Peruvian non-profit organization founded in the department of Loreto, the largest Amazon region in Peru, an area of ​​extraordinary biodiversity that is affected by the constant problems of illegal logging, deforestation, and migratory agriculture. We currently promote the conservation and recovery of forest species in danger of extinction in 300 hectares of forests. Located at km 55 of the Iquitos-Nauta highway, an area highly affected by illegal logging.",
                     missionTitle: "Misition",
-                    missionDescription: "",
+                    missionDescription: "Conserve vulnerable forest areas and promote reforestation and recovery of endangered Amazon Rainforest species.",
                     vitionTitle: "Visition",
-                    vitionDescription: "",
+                    vitionDescription: "To be a non-profit organization recognized worldwide for promoting the conservation of Amazon forests and reforestation with an emphasis on forest species in danger of extinction.",
                     ourWork: "Find out about our work"
                 },
                 "contact": {
@@ -272,12 +305,16 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         id: "id"
                     },
                     "slider": {
-                        addSlider: "ADD SLIDER",
+                        addSlider: "Add slider",
+                        editSlider: "Edit slider",
                         id: "id",
                         imageTable: "Image",
                         titleTable: "Title",
+                        save: "Save",
                         descriptionTable: "Descriptión",
                         actionsTable: "Actions",
+                        mainImage: "Featured image",
+                        chooseImage: "Choose an image",
                         delete: "Delete",
                         edit: "Edit"
                     },
@@ -287,7 +324,8 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         imageTable: "Image",
                         actionsTable: "Actions",
                         delete: "Delete",
-                        add: "Add"
+                        add: "Add",
+                        addSocios: "Add socios",
                     },
                     "socialNetworks": {
                         url: "Enter social network url",
@@ -302,7 +340,15 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         actionsTable: "Actions",
                         delete: "Delete",
                         edit: "Edit",
-                        email: "Email"
+                        email: "Email",
+                        phone: "Phone",
+                        address: "Address",
+                        contacts: "Contacts",
+                        enterAContact: "Enter contact information",
+                        title: "Title",
+                        url: "contact link",
+                        select: "Select the type of contact to create",
+                        save: "Save"
                     },
                     "donation": {
                         content: "Content",
@@ -318,7 +364,12 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         titleTable: "Title",
                         actionsTable: "Actions",
                         delete: "Delete",
-                        edit: "Edit"
+                        edit: "Edit",
+                        projects: "Projects",
+                        add: "Add",
+                        mainImage: "Featured image",
+                        save: "Save",
+                        content: "Content"
                     },
                     "galery": {
                         addImage: "Add image",
@@ -326,6 +377,9 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         imageTable: "Image",
                         actionsTable: "Actions",
                         delete: "Delete",
+                        upload: "Upload Image",
+                        add: "Add image",
+                        galery: "image gallery"
                     },
                     "users": {
                         newUser: "Ner User",
@@ -333,7 +387,15 @@ i18n.use(LanguageDetector).use(initReactI18next)
                         userTable: "User",
                         actionsTable: "Actions",
                         delete: "Delete",
-                        edit: "Edit"
+                        edit: "Edit",
+                        user: "User",
+                        addUser: "Add user",
+                        editUser: "Edit User",
+                        userNoRegister: "Unregistered user!",
+                        userRegister: "Registered user successfully!",
+                        save: "Save",
+                        saveChanges: "Save chages",
+                        password: "Password"
                     }
                 },
                 "notFound": {
