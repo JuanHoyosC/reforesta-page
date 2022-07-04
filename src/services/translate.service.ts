@@ -1,6 +1,6 @@
 export async function getTranslate(text: string = '') {
     const data = { text, from: 'es', to: 'en' }
-    const response = await fetch('http://localhost:8080',{ method: 'POST',
+    const response = await fetch('https://pure-retreat-55148.herokuapp.com/',{ method: 'POST',
                         body: JSON.stringify(data),
                         headers: {
                             'content-type': 'application/json;charset=UTF-8',
