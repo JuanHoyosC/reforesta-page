@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/JuanHoyosC/reforesta-page/static/css/main.dd41e0cd.css",
+    "main.js": "/JuanHoyosC/reforesta-page/static/js/main.591459a0.js",
+    "static/js/787.93721819.chunk.js": "/JuanHoyosC/reforesta-page/static/js/787.93721819.chunk.js",
+    "static/media/banner.jpg": "/JuanHoyosC/reforesta-page/static/media/banner.29eee33c16e4e3eb468d.jpg",
+    "static/media/footer-bg.jpg": "/JuanHoyosC/reforesta-page/static/media/footer-bg.3f704a35f1babd9f64d7.jpg",
+    "static/media/logo-reforestaloreto.png": "/JuanHoyosC/reforesta-page/static/media/logo-reforestaloreto.65d2005dd9bdca9f445b.png",
+    "static/media/home-image.png": "/JuanHoyosC/reforesta-page/static/media/home-image.b0751843b029069eeec9.png",
+    "static/media/fondo-1.jpeg": "/JuanHoyosC/reforesta-page/static/media/fondo-1.20890b8c4f2487d7077b.jpeg",
+    "static/media/logo-demo.png": "/JuanHoyosC/reforesta-page/static/media/logo-demo.d7a8962440719fe96c32.png",
+    "static/media/slick.svg": "/JuanHoyosC/reforesta-page/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/JuanHoyosC/reforesta-page/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/JuanHoyosC/reforesta-page/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/JuanHoyosC/reforesta-page/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/JuanHoyosC/reforesta-page/index.html",
+    "main.dd41e0cd.css.map": "/JuanHoyosC/reforesta-page/static/css/main.dd41e0cd.css.map",
+    "main.591459a0.js.map": "/JuanHoyosC/reforesta-page/static/js/main.591459a0.js.map",
+    "787.93721819.chunk.js.map": "/JuanHoyosC/reforesta-page/static/js/787.93721819.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd41e0cd.css",
+    "static/js/main.591459a0.js"
+  ]
+}
