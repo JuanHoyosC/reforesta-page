@@ -2,6 +2,9 @@
   "name": "reforestalor",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.13.2"
+  },
   "homepage": "https://github.com/JuanHoyosC/reforesta-page",
   "dependencies": {
     "@emotion/react": "^11.9.0",
