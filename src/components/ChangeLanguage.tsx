@@ -1,27 +1,40 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { TranslateContext } from "../context/TranslateContext";
+import englishImage from "../assets/img/english.png";
+import spanishImage from "../assets/img/spanish.png";
+
+const style = {
+  width: "2rem",
+  margin: ".5rem"
+}
 
 export default function ChangeLanguage() {
 
   const { translateState, updateLanguage } = useContext(TranslateContext);
-  console.log(translateState)
+  let lng = localStorage.getItem('language');
+  lng = lng ? lng : 'es';
+  const [language, setLanguage] = useState(lng);
 
-  const [language, setLanguage] = React.useState(translateState.language);
-  const { t, i18n } = useTranslation();
 
-  const changeLanguage = (event: any) => {
-    const lang = event.target.value
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang)
-    setLanguage(lang);
     updateLanguage(lang);
+    setLanguage(lang)
     localStorage.setItem('language', lang);
   }
-  
+
   return (
-    <select style={{ color: '#000' }} name="language" value={language} id="language" onChange={ changeLanguage }>
-        <option key="es" value="es">{ t('general.spanish') }</option>
-        <option key="en" value="en">{ t('general.english') }</option>
-    </select>
+    <div style={{display: "flex"}}>
+      <button onClick={() => changeLanguage('es')} style={style}>
+        <img src={spanishImage} alt="spanish" id="spanish" />
+      </button>
+      <button onClick={() => changeLanguage('en')} style={style}>
+        <img src={englishImage} alt="english" id="english" />
+      </button>
+
+    </div>
   )
 }

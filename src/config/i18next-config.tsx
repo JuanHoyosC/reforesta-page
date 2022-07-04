@@ -248,7 +248,7 @@ i18n.use(LanguageDetector).use(initReactI18next)
                     title: "ABOUT US",
                     title2: "About Us",
                     description: "We are a Peruvian non-profit organization founded in the department of Loreto, the largest Amazon region in Peru, an area of ​​extraordinary biodiversity that is affected by the constant problems of illegal logging, deforestation, and migratory agriculture. We currently promote the conservation and recovery of forest species in danger of extinction in 300 hectares of forests. Located at km 55 of the Iquitos-Nauta highway, an area highly affected by illegal logging.",
-                    missionTitle: "Misition",
+                    missionTitle: "Mission",
                     missionDescription: "Conserve vulnerable forest areas and promote reforestation and recovery of endangered Amazon Rainforest species.",
                     vitionTitle: "Visition",
                     vitionDescription: "To be a non-profit organization recognized worldwide for promoting the conservation of Amazon forests and reforestation with an emphasis on forest species in danger of extinction.",
