@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Container } from "@mui/material";
-
 interface TopBannerProps {
   id?: string;
   image: string;
@@ -23,7 +22,7 @@ const TopBanner: FC<TopBannerProps> = ({ id, image, title }) => {
       <Container>
         <div className="p-12 md:p-20">
           <h1 className="text-6xl md:text-7xl text-white my-20 text-center">
-            {title}
+            { title }
           </h1>
           <div className="flex justify-center mt-10 sm:mt-20">
             <div className="animate-bounce-slow p-2 w-10 h-10 ring-1 ring-slate-900/5 shadow-lg rounded-full flex border-2 border-white pt-0 sm:pt-2">

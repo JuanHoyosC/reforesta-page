@@ -28,6 +28,7 @@ import Donations from "./components/Donations";
 import MapaPage from "./pages/Admin/MapaPage";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { TranslateProvider } from "./context/TranslateProvider";
 
 function App() {
   const { i18n } = useTranslation();
@@ -38,6 +39,7 @@ function App() {
   }, [i18n]);
   return (
     <AuthProvider>
+      <TranslateProvider>
       <BrowserRouter>
         <Routes>
           {/* //////////////////////////////////////////////////////////////////////// */}
@@ -273,6 +275,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      </TranslateProvider>
     </AuthProvider>
   );
 }

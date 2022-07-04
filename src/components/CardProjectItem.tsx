@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import demoImage from "../assets/img/home-image.png";
+import { TranslateContext } from "../context/TranslateContext";
+import { getTranslate } from "../services/translate.service";
 
 interface CardProjectItem {
   title: string;
@@ -18,6 +20,18 @@ const CardProjectItem: FC<CardProjectItem> = ({
   image,
 }) => {
   const { t } = useTranslation();
+  const [ titleState, setTitle] = useState(title);
+  const { translateState } = useContext(TranslateContext);
+
+  useEffect(() => {
+    if(translateState.language === 'en') {
+      getTranslate(title).then((textTranslate: string) => {
+        setTitle(textTranslate);
+      } );
+    }else {
+      setTitle(title);
+    }
+  }, [title, translateState]);
   return (
     <div className="rounded-lg">
       <img
@@ -27,7 +41,7 @@ const CardProjectItem: FC<CardProjectItem> = ({
         loading="lazy"
       />
       <Link to={"/blog/" + slug} className="break-words text-xl text-cyan-900">
-        {title ? title.substring(0, 50).toUpperCase() + "..." : t('general.projectTitle')}
+        {titleState ? titleState.substring(0, 50).toUpperCase() + "..." : t('general.projectTitle')}
         <p className="mb-5 break-words text-sm">
           {t('general.reading')}
         </p>

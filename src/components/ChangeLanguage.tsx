@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { TranslateContext } from "../context/TranslateContext";
 
 export default function ChangeLanguage() {
-  let lng = localStorage.getItem('language');
-  lng = lng ? lng : 'es';
-  const [language, setLanguage] = React.useState(lng);
+
+  const { translateState, updateLanguage } = useContext(TranslateContext);
+  console.log(translateState)
+
+  const [language, setLanguage] = React.useState(translateState.language);
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (event: any) => {
     const lang = event.target.value
     i18n.changeLanguage(lang)
     setLanguage(lang);
+    updateLanguage(lang);
     localStorage.setItem('language', lang);
   }
   

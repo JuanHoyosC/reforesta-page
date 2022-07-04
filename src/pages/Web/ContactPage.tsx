@@ -7,14 +7,18 @@ import useDonation from "../../hooks/useDonation";
 import useContact from "../../hooks/useContact";
 import useMap from "../../hooks/useMap";
 import { succesAlert } from "../../utils/alerts";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { sendEmail } from "../../services/email.services";
 import { useTranslation } from "react-i18next";
+import { getTranslate } from "../../services/translate.service";
+import { TranslateContext } from "../../context/TranslateContext";
 
 const ContactPage = () => {
 
   const { t } = useTranslation();
+  const { translateState } = useContext(TranslateContext);
   const { donationContent } = useDonation();
+  const [ donation, setDonation ] = useState(donationContent?.donation_description);
   const { contacts } = useContact();
   const { map } = useMap();
 
@@ -43,6 +47,16 @@ const ContactPage = () => {
     });
   };
 
+  useEffect(() => {
+    if(translateState.language === 'en') {
+      getTranslate(donationContent?.donation_description).then((textTranslate: string) => {
+        setDonation(textTranslate);
+      } );
+    }else {
+      setDonation(donationContent?.donation_description);
+    }
+  }, [donationContent?.donation_description, translateState]);
+
   return (
     <>
       <TopBanner image={TempImage} title={ t('contact.title') } id="top" />
@@ -53,11 +67,11 @@ const ContactPage = () => {
             style={{ maxWidth: "1000px" }}
           >
             <div className="md:flex w-full">
-              {donationContent?.donation_description ? (
+              {donation ? (
                 <div
                   className="hidden md:block w-1/2 bg-white py-10 px-10"
                   dangerouslySetInnerHTML={{
-                    __html: donationContent.donation_description,
+                    __html: donation,
                   }}
                 />
               ) : (
@@ -102,7 +116,7 @@ const ContactPage = () => {
                     <div className="flex -mx-3">
                       <div className="w-full px-3 mb-5">
                         <label className="text-xs font-semibold px-1 text-white text-xl">
-                        { t('contact.email') }
+                        ¿Como puedes contactarnos?
                         </label>
                         <div className="flex">
                           <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
