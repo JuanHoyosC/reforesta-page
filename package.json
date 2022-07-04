@@ -2,7 +2,7 @@
   "name": "reforestalor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://reforestaloreto.org.pe/",
+  "homepage": "https://github.com/JuanHoyosC/reforesta-page/settings/pages",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -17,6 +17,7 @@
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
     "axios": "^0.26.1",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.9",
     "i18next-browser-languagedetector": "^6.1.4",
     "jodit-react": "^1.3.1",
@@ -36,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
